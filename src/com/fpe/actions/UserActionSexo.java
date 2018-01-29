@@ -13,7 +13,7 @@ import org.apache.struts.action.DynaActionForm;
 
 import com.fpe.logic.UserData;
 
-public class UserAction extends Action {
+public class UserActionSexo extends Action {
 
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
@@ -22,23 +22,27 @@ public class UserAction extends Action {
 		DynaActionForm userForm = (DynaActionForm) form;
 		ActionMessages errors = new ActionMessages();
 		
-		if (userForm.get("username") == null || ("".equals(userForm.get("username")))) {
-			errors.add("common.name.err" , new ActionMessage("error.common.name.required"));
+		UserData userData; //= new UserData();
+		userData = (UserData)request.getSession().getAttribute("UserLogged");
+		if (userData == null || userData.equals("")) {
+			errors.add("common.sesion.err" , new ActionMessage("error.common.userlogged.ausente"));
 		}
 		
-		if (userForm.get("useredad") == null || ("".equals(userForm.get("useredad")))) {
-			errors.add("common.edad.err" , new ActionMessage("error.common.edad.required"));
-		} else if ((Integer)userForm.get("useredad") < 18 ) {
-			errors.add("common.edad.err" , new ActionMessage("error.common.edad.menordeedad"));
-		} 
+		if ((userForm.get("usersex") == null) || (userForm.get("usersex").equals(""))) {
+			errors.add("common.sexo.err" , new ActionMessage("error.common.sexo.noselecionado"));
+			saveErrors(request, errors);
+			return mapping.findForward("noselecion");
+		}
 		
-			
 		saveErrors(request, errors);
 		
-		if (errors.isEmpty() ) {
-			UserData userData = new UserData();
-			userData.setName((String)userForm.get("username"));
-			userData.setEdad((Integer)userForm.get("useredad"));
+		if (errors.isEmpty()) {
+			String thisUser = userData.getName();
+			Integer thisEdad = userData.getEdad();
+			String thisSexo = (String)userForm.get("usersex");
+			userData.setName(thisUser);
+			userData.setEdad(thisEdad);
+			userData.setSexo(thisSexo);
 			request.getSession().setAttribute("UserLogged", userData);
 			return mapping.findForward("success");
 		} else {

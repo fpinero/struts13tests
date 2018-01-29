@@ -11,7 +11,11 @@
 		
 		<form-bean name="dynaUserForm" type="org.apache.struts.action.DynaActionForm">
 			<form-property name="username" type="java.lang.String"/>
-			<form-property name="useredad" type="java.lang.Integer"></form-property>
+			<form-property name="useredad" type="java.lang.Integer"/>
+		</form-bean>
+		
+		<form-bean name="addSexUserLogged" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="usersex" type="java.lang.String"/>
 		</form-bean>
 		
 	</form-beans>
@@ -29,9 +33,20 @@
 			name="dynaUserForm">
 			
 			<forward name="success" path="/welcome.jsp" />
-			<forward name="failed" path="/login.jsp"></forward>
+			<forward name="failed" path="/login.jsp"/>
 			
-			</action>
+		</action>
+		
+		<action path="/welcome"
+			type="com.fpe.actions.UserActionSexo"
+			name="addSexUserLogged">
+			
+			<forward name="success" path="/welcome2.jsp" />
+			<forward name="failed" path="/login.jsp"/>
+			<forward name="noselecion" path="/welcome.jsp"/>
+		
+		</action>
+			
 		
 	</action-mappings>
 	

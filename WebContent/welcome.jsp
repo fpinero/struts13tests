@@ -11,11 +11,38 @@
 <title>welcome</title>
 </head>
 <body>
-<br/><br/>
-<h3 align="center" style="color: blue;"><bean:message key="label.welcome.login"/>
-	<bean:write name="UserLogged" property="name"/>&nbsp;con edad
-	<bean:write name="UserLogged" property="edad"/> </h3>
-<br/>
+<logic:present name="UserLogged">
+	<h3 align="center" style="color: blue;"><bean:message key="label.welcome.login"/>
+		<bean:write name="UserLogged" property="name"/>&nbsp;con edad
+		<bean:write name="UserLogged" property="edad"/> 
+	</h3>
+</logic:present>
+<html:form action="welcome">
+
+	<html:messages id="err_sexo" property="common.sexo.err">
+		<div style="color: red;">
+			<bean:write name="err_sexo"/>
+		</div>
+	</html:messages>
+	
+	<html:radio property="usersex" value="male"/> 
+		<bean:message key="label.common.html.radio.sex.male"/>
+
+	<html:radio property="usersex" value="female"/> 
+		<bean:message key="label.common.html.radio.sex.female"/>
+
+	<div style="padding:16px">
+		<div style="float:left;padding-right:8px;">
+			<html:submit>
+                <bean:message key="label.common.html.radio.button.submit"/>
+            </html:submit>
+	</div>
+	<html:reset>
+        <bean:message key="label.common.html.radio.button.reset"/>
+    </html:reset>
+	</div>
+	
+</html:form>
 
 </body>
 </html>

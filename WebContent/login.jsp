@@ -22,6 +22,11 @@
 				<bean:write name="err_edad"/>
 			</div>
 		</html:messages>
+		<html:messages id="err_sesion" property="common.sesion.err">
+			<div style="color: red;">
+				<bean:write name="err_sesion"/>
+			</div>
+		</html:messages>
 		
 		<div style="padding:16px">
 			<div style="float:left;padding-right:8px;">
