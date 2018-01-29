@@ -6,15 +6,34 @@
 <struts-config>
 
 	<form-beans>
+	
 		<form-bean name="helloWorldForm" type="com.fpe.forms.HelloWorldForm" />
+		
+		<form-bean name="dynaUserForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="username" type="java.lang.String"/>
+		</form-bean>
+		
 	</form-beans>
 	
 	<action-mappings>
+	
 		<action path="/helloworld" 
 			type="com.fpe.actions.HelloWorldAction"
 			name="helloWorldForm">
 			<forward name="success" path="/helloworld.jsp"/>		
 		</action>
+		
+		<action path="/Login"
+			type="com.fpe.actions.UserAction"
+			name="dynaUserForm">
+			
+			<forward name="success" path="/welcome.jsp" />
+			<forward name="failed" path="/login.jsp"></forward>
+			
+			</action>
+		
 	</action-mappings>
+	
+	<message-resources parameter="com.fpe.config.ApplicationResources" />
 
 </struts-config>

@@ -8,14 +8,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>helloworld</title>
+<title>welcome</title>
 </head>
 <body>
-<h1 align="center"><bean:write name="helloWorldForm" property="message" /></h1>
-<h3 align="center" style="color: red;"><bean:message key="label.welcome"/></h3>
+<br/><br/>
+<h3 align="center" style="color: blue;"><bean:message key="label.welcome.login"/>
+	<bean:write name="UserLogged"/> </h3>
 <br/>
-<div align="center">
-	<html:link href="./login.jsp">Login</html:link>
-</div>
+
 </body>
 </html>
