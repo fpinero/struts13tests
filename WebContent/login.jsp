@@ -17,12 +17,23 @@
 				<bean:write name="err_name"/>
 			</div>
 		</html:messages>
+		<html:messages id="err_edad" property="common.edad.err">
+			<div style="color: red;">
+				<bean:write name="err_edad"/>
+			</div>
+		</html:messages>
 		
 		<div style="padding:16px">
 			<div style="float:left;padding-right:8px;">
 				<bean:message key="label.common.name"/>&nbsp;:
 			</div>
 			<html:text property="username" size="20" maxlength="20" />
+		</div>
+		<div style="padding:16px">
+			<div style="float:left;padding-right:8px;">
+				<bean:message key="label.common.edad"/>&nbsp;:
+			</div>
+			<html:text property="useredad" size="2" maxlength="2" />
 		</div>
 		
 		<div style="padding:16px">

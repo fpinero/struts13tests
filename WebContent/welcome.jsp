@@ -13,7 +13,8 @@
 <body>
 <br/><br/>
 <h3 align="center" style="color: blue;"><bean:message key="label.welcome.login"/>
-	<bean:write name="UserLogged"/> </h3>
+	<bean:write name="UserLogged" property="name"/>&nbsp;con edad
+	<bean:write name="UserLogged" property="edad"/> </h3>
 <br/>
 
 </body>

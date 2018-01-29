@@ -11,6 +11,7 @@
 		
 		<form-bean name="dynaUserForm" type="org.apache.struts.action.DynaActionForm">
 			<form-property name="username" type="java.lang.String"/>
+			<form-property name="useredad" type="java.lang.Integer"></form-property>
 		</form-bean>
 		
 	</form-beans>
