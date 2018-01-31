@@ -18,6 +18,8 @@
 			<form-property name="usersex" type="java.lang.String"/>
 		</form-bean>
 		
+		<form-bean name="bootstrapLogin" type="com.fpe.forms.UsuarioLoginForm" />
+		
 	</form-beans>
 	
 	<action-mappings>
@@ -45,6 +47,13 @@
 			<forward name="failed" path="/login.jsp"/>
 			<forward name="noselecion" path="/welcome.jsp"/>
 		
+		</action>
+		
+		<action path="/b_login" 
+			type="com.fpe.actions.UsuarioLoginAction"
+			name="bootstrapLogin">
+			<forward name="success" path="/b_loginok.jsp"/>		
+			<forward name="failed" path="/b_login.jsp"/>
 		</action>
 			
 		

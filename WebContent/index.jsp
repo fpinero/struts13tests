@@ -7,6 +7,6 @@
 <title>index</title>
 </head>
 <body>
-<jsp:forward page="helloworld.do" />
+<jsp:forward page="b_login.jsp" />
 </body>
 </html>

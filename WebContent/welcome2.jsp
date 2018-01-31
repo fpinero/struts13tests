@@ -20,6 +20,9 @@
 		<br/> sexo: 
 		<bean:write name="UserLogged" property="sexo"/>
 	</h3>
+	<input type="text" value="${UserLogged.name}" readonly="readonly"><br/>
+	<input type="text" value="${UserLogged.edad}" readonly="readonly"><br/>
+	<input type="text" value="${UserLogged.sexo}" readonly="readonly"><br/>
 </logic:present>
 
 </body>
