@@ -34,14 +34,10 @@
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4">
 					<html:form action="b_login">
+	UserName: <html:text property="userName" styleClass="form-control" ></html:text>
 						<html:messages id="err_name" property="common.usuario.err">
 							<div style="color: red;">
 								<bean:write name="err_name" />
-							</div>
-						</html:messages>
-						<html:messages id="err_pwd" property="common.passwd.err">
-							<div style="color: red;">
-								<bean:write name="err_pwd" />
 							</div>
 						</html:messages>
 						<html:messages id="err_name_long"
@@ -50,15 +46,18 @@
 								<bean:write name="err_name_long" />
 							</div>
 						</html:messages>
+						<br />
+	Password: <html:password property="password" styleClass="form-control"></html:password>
+						<html:messages id="err_pwd" property="common.passwd.err">
+							<div style="color: red;">
+								<bean:write name="err_pwd" />
+							</div>
+						</html:messages>
 						<html:messages id="err_pwd_long" property="common.passwdlong.err">
 							<div style="color: red;">
 								<bean:write name="err_pwd_long" />
 							</div>
 						</html:messages>
-	UserName: <html:text property="userName" styleClass="form-control" ></html:text>
-						<br />
-	Password: <html:password property="password" styleClass="form-control"></html:password>
-						<br />
 						<br />
 						<html:submit styleClass="btn btn-lg btn-primary btn-block">Login</html:submit>
 						<html:reset styleClass="btn btn-lg btn-primary btn-block">Reset</html:reset>
