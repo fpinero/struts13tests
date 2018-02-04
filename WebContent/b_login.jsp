@@ -25,43 +25,49 @@
      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
    <![endif]-->
+
+<!-- inclusión del css propio de la palicación  -->
+<link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<br/><br/>
+	<br />
+	<br />
 
 	<section id="login">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4">
-					<html:form action="b_login">
-	UserName: <html:text property="userName" styleClass="form-control" ></html:text>
-						<html:messages id="err_name" property="common.usuario.err">
-							<div style="color: red;">
-								<bean:write name="err_name" />
-							</div>
-						</html:messages>
-						<html:messages id="err_name_long"
-							property="common.usuariolong.err">
-							<div style="color: red;">
-								<bean:write name="err_name_long" />
-							</div>
-						</html:messages>
-						<br />
+					<div class="form-signin">
+						<html:form action="b_login">
+	UserName: <html:text property="userName" styleClass="form-control"></html:text>
+							<html:messages id="err_name" property="common.usuario.err">
+								<div style="color: red;">
+									<bean:write name="err_name" />
+								</div>
+							</html:messages>
+							<html:messages id="err_name_long"
+								property="common.usuariolong.err">
+								<div style="color: red;">
+									<bean:write name="err_name_long" />
+								</div>
+							</html:messages>
+							<br />
 	Password: <html:password property="password" styleClass="form-control"></html:password>
-						<html:messages id="err_pwd" property="common.passwd.err">
-							<div style="color: red;">
-								<bean:write name="err_pwd" />
-							</div>
-						</html:messages>
-						<html:messages id="err_pwd_long" property="common.passwdlong.err">
-							<div style="color: red;">
-								<bean:write name="err_pwd_long" />
-							</div>
-						</html:messages>
-						<br />
-						<html:submit styleClass="btn btn-lg btn-primary btn-block">Login</html:submit>
-						<html:reset styleClass="btn btn-lg btn-primary btn-block">Reset</html:reset>
-					</html:form>
+							<html:messages id="err_pwd" property="common.passwd.err">
+								<div style="color: red;">
+									<bean:write name="err_pwd" />
+								</div>
+							</html:messages>
+							<html:messages id="err_pwd_long" property="common.passwdlong.err">
+								<div style="color: red;">
+									<bean:write name="err_pwd_long" />
+								</div>
+							</html:messages>
+							<br />
+							<html:submit styleClass="btn btn-lg btn-primary btn-block">Login</html:submit>
+							<html:reset styleClass="btn btn-lg btn-primary btn-block">Reset</html:reset>
+						</html:form>
+					</div>
 				</div>
 			</div>
 		</div>
