@@ -26,7 +26,7 @@
      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
    <![endif]-->
 
-<!-- inclusión del css propio de la palicación  -->
+<!-- inclusión del css propio de la aplicación  -->
 <link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>

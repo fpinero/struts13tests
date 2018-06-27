@@ -22,12 +22,19 @@
      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
    <![endif]-->
+   
+   <!-- inclusión del css propio de la aplicación  -->
+<link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-
-<h1>Has sido validado correctamente</h1>
-
+<section id="loginok">
+	<div class="container">
+		<div class="col-sm-8 col-sm-offset-2">
+			<h3 class="text-center">Has sido validado correctamente <bean:write name="bootstrapLogin" property="userName" /></h3>
+		</div>
+	</div>
+</section>
 
 
 
